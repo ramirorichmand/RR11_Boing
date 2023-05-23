@@ -21,3 +21,22 @@ const MESSAGE_EL = document.querySelector("#message");
 const SCORE_EL = document.querySelector("#score");
 const HIGHSCORE_MESSAGE_EL =
     document.querySelector("#highscore");
+
+let game;
+let boing;
+
+const OBSTACLE_SPAWN_INTERVAL_MS_RANGE = [500, 2000];
+let obstacleSpawnTimeout = null;
+
+function createBoingState() {
+    return {
+        x: 64,
+        y: HEIGHT - 64,
+        width: 32,
+        height: 64,
+        yVelocity: 0,
+        isOnGround: false,
+        isJumping: false,
+        element: BOING_EL,
+    };
+}
