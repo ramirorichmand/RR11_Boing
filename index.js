@@ -65,3 +65,20 @@ function startGame() {
     startSpawningObstacles();
     startUpdateLoop();
 }
+
+function stopGame() {
+    if (!game.isRunning) return;
+
+    game.isRunning = false;
+    stopSpawningObstacles();
+    stopUpdateLoop();
+}
+
+function resumeGame() {
+    startGame();
+}
+
+function pauseGame() {
+    stopGame();
+    setMessage("PAUSED press P to resume");
+}
