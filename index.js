@@ -85,8 +85,8 @@ function pauseGame() {
 
 function resetGame() {
     game = createGameState();
-    dino = createDinoState();
-    setElementPosition(dino.element, dino);
+    boing = createBoingState();
+    setElementPosition(boing.element, boing);
     OBSTACLES_EL.innerHTML = "";
     setMessage("Press SPACE to start!");
     setupControls();
@@ -99,4 +99,9 @@ function gameOver() {
     game.isGameOver = true;
     setMessage("GAME OVER press R to reset");
     handleHighscore();
+}
+
+function handleHighscore() {
+    const highscore = getHighscore();
+    
 }
