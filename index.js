@@ -103,5 +103,10 @@ function gameOver() {
 
 function handleHighscore() {
     const highscore = getHighscore();
-    
+    if (game.score > highscore) {
+        saveHighscore(game.score);
+        setHighscoreMessage("New Highscore!");
+    } else {
+        setHighscoreMessage(`Highscore: ${highscore}`);
+    }
 }
