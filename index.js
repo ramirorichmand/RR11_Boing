@@ -93,3 +93,10 @@ function resetGame() {
     renderScore(game.score);
     clearHighscoreMessage();
 }
+
+function gameOver() {
+    stopGame();
+    game.isGameOver = true;
+    setMessage("GAME OVER press R to reset");
+    handleHighscore();
+}
