@@ -50,3 +50,9 @@ function createGameState() {
         score: 0,
     };
 }
+
+function main() {
+    resetGame();
+    setupControls();
+    // startGame();
+}
