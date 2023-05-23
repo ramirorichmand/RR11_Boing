@@ -56,3 +56,12 @@ function main() {
     setupControls();
     // startGame();
 }
+
+function startGame() {
+    if (game.isGameOver || game.isRunning) return;
+
+    game.isRunning = true;
+    clearMessage();
+    startSpawningObstacles();
+    startUpdateLoop();
+}
