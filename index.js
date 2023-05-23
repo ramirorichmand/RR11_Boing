@@ -40,3 +40,13 @@ function createBoingState() {
         element: BOING_EL,
     };
 }
+
+function createGameState() {
+    return {
+        isRunning: false,
+        isGameOver: false,
+        speed: 10,
+        obstacles: [],
+        score: 0,
+    };
+}
