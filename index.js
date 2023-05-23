@@ -82,3 +82,14 @@ function pauseGame() {
     stopGame();
     setMessage("PAUSED press P to resume");
 }
+
+function resetGame() {
+    game = createGameState();
+    dino = createDinoState();
+    setElementPosition(dino.element, dino);
+    OBSTACLES_EL.innerHTML = "";
+    setMessage("Press SPACE to start!");
+    setupControls();
+    renderScore(game.score);
+    clearHighscoreMessage();
+}
