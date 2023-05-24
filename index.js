@@ -205,4 +205,13 @@ function setupControls() {
         startGameInitially,
     ]);
 
-    // window on blur
+    const windowOnBlur = () => {
+        if (game.isGameOver) return;
+        pauseGame();
+    };
+    const windowOnFocus = () => {
+        // if (game.isGameOver) return;
+        // resumeGame();
+    };
+
+    // window event listeners
