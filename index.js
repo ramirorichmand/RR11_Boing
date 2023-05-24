@@ -110,3 +110,99 @@ function handleHighscore() {
         setHighscoreMessage(`Highscore: ${highscore}`);
     }
 }
+
+function getHighscore() {
+    const value = window.localStorage.getItem(
+        LOCALSTORAGE_HIGHSCORE_KEY,
+    );
+    if (value === null) {
+        return 0;
+    }
+
+    const highscore = parseInt(value);
+    return Number.isNaN(highscore) ? 0 : highscore;
+}
+
+function saveHighscore(score) {
+    window.localStorage.setItem(
+        LOCALSTORAGE_HIGHSCORE_KEY,
+        score.toString(),
+    );
+}
+
+function setHighscoreMessage(msg) {
+    HIGHSCORE_MESSAGE_EL.innerText = msg;
+    HIGHSCORE_MESSAGE_EL.classList.remove("hidden");
+}
+
+function clearHighscoreMessage() {
+    HIGHSCORE_MESSAGE_EL.classList.add("hidden");
+}
+
+function startSpawningObstacles() {
+    stopSpawningObstacles();
+    const setSpawnTimeout = () => {
+        obstacleSpawnTimeout = setTimeout(() => {
+            spawnObstacle();
+            setSpawnTimeout();
+        }, getRandomObstacleSpawnDelay());
+    };
+    setSpawnTimeout();
+}
+
+function getRandomObstacleSpawnDelay() {
+    return randomInRange(
+        OBSTACLE_SPAWN_INTERVAL_MS_RANGE[0],
+        OBSTACLE_SPAWN_INTERVAL_MS_RANGE[1],
+    );
+}
+
+function randomInRange(min, max) {
+    return min + Math.floor(Math.random() * (max - min));
+}
+
+function stopSpawningObstacles() {
+    if (obstacleSpawnTimeout !== null) {
+        clearTimeout(obstacleSpawnTimeout);
+        obstacleSpawnTimeout = null;
+    }
+}
+
+let eventListeners = [];
+function setupControls() {
+    cleanupEventListeners();
+
+    const keyDown = (e) =>
+        !e.repeat && onKeyDown(e.key.toLowerCase());
+    const keyUp = (e) => onKeyUp(e.key.toLowerCase());
+
+    document.addEventListener("keydown", keyDown);
+    eventListeners.push([document, "keydown", keyDown]);
+    document.addEventListener("keyup", keyUp);
+    eventListeners.push([document, "keyup", keyUp]);
+
+    const startGameInitially = (e) => {
+        if (
+            getActionForKey(e.key.toLowerCase()) !== "jump"
+        ) {
+            return;
+        }
+
+        clearMessage();
+        startGame();
+        document.removeEventListener(
+            "keydown",
+            startGameInitially,
+        );
+    };
+    document.addEventListener(
+        "keydown",
+        startGameInitially,
+    );
+    eventListeners.push([
+        document,
+        "keydown",
+        startGameInitially,
+    ]);
+
+    // window on blur
