@@ -214,4 +214,20 @@ function setupControls() {
         // resumeGame();
     };
 
-    // window event listeners
+    window.addEventListener("blur", windowOnBlur);
+    eventListeners.push([window, "blur", windowOnBlur]);
+    window.addEventListener("focus", windowOnFocus);
+    eventListeners.push([window, "focus", windowOnFocus]);
+}
+
+function cleanupEventListeners() {
+    let listener;
+    while ((listener = eventListeners.pop())) {
+        listener[0].removeEventListener(
+            listener[1],
+            listener[2],
+        );
+    }
+}
+
+// function keys
