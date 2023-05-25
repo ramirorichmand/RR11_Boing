@@ -230,4 +230,45 @@ function cleanupEventListeners() {
     }
 }
 
-// function keys
+function onKeyDown(key) {
+    const action = getActionForKey(key);
+    switch (action) {
+        case "jump":
+            if (!game.isRunning) return;
+            jump();
+            break;
+        case "pause":
+            togglePause();
+            break;
+        case "reset":
+            resetGame();
+            break;
+    }
+}
+
+function onKeyUp(key) {
+    if (!game.isRunning) return;
+
+    const action = getActionForKey(key);
+    switch (action) {
+        case "jump":
+            stopJump();
+            break;
+    }
+}
+
+function togglePause() {
+    if (game.isRunning) {
+        pauseGame();
+    } else {
+        resumeGame();
+    }
+}
+
+function getActionForKey(key) {
+    for (const action of Object.keys(CONTROLS)) {
+        if (CONTROLS[action].includes(key)) {
+            return action;
+        }
+    }
+}
