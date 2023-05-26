@@ -272,3 +272,52 @@ function getActionForKey(key) {
         }
     }
 }
+
+function jump() {
+    if (!dino.isOnGround || dino.isJumping) return;
+
+    dino.yVelocity = JUMP_STRENGTH;
+    dino.isJumping = true;
+    dino.isOnGround = false;
+}
+
+function stopJump() {
+    if (!dino.isJumping) return;
+
+    dino.yVelocity = Math.max(
+        JUMP_STOP_VELOCITY,
+        dino.yVelocity,
+    );
+    dino.isJumping = false;
+}
+
+function update() {
+    if (!game.isRunning) {
+        return;
+    }
+
+    handleGravity();
+    moveDino();
+    moveObstacles();
+    handleCollision();
+    handleScore();
+
+    drawDino();
+}
+
+function startUpdateLoop() {
+    stopUpdateLoop();
+    updateInterval = setInterval(
+        update,
+        UPDATE_INTERVAL_MS,
+    );
+}
+
+function stopUpdateLoop() {
+    if (updateInterval !== null) {
+        clearInterval(updateInterval);
+        updateInterval = null;
+    }
+}
+
+// ^ jump and loop
