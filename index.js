@@ -274,21 +274,21 @@ function getActionForKey(key) {
 }
 
 function jump() {
-    if (!dino.isOnGround || dino.isJumping) return;
+    if (!boing.isOnGround || boing.isJumping) return;
 
-    dino.yVelocity = JUMP_STRENGTH;
-    dino.isJumping = true;
-    dino.isOnGround = false;
+    boing.yVelocity = JUMP_STRENGTH;
+    boing.isJumping = true;
+    boing.isOnGround = false;
 }
 
 function stopJump() {
-    if (!dino.isJumping) return;
+    if (!boing.isJumping) return;
 
-    dino.yVelocity = Math.max(
+    boing.yVelocity = Math.max(
         JUMP_STOP_VELOCITY,
-        dino.yVelocity,
+        boing.yVelocity,
     );
-    dino.isJumping = false;
+    boing.isJumping = false;
 }
 
 function update() {
@@ -297,12 +297,12 @@ function update() {
     }
 
     handleGravity();
-    moveDino();
+    moveBoing();
     moveObstacles();
     handleCollision();
     handleScore();
 
-    drawDino();
+    drawBoing();
 }
 
 function startUpdateLoop() {
@@ -320,4 +320,54 @@ function stopUpdateLoop() {
     }
 }
 
-// ^ jump and loop
+function handleGravity() {
+    if (boing.isOnGround) {
+        boing.yVelocity = 0;
+        return;
+    }
+
+    boing.yVelocity += GRAVITY;
+}
+
+function moveBoing() {
+    const yBottom = boing.y + boing.height;
+    let y = boing.y;
+    y += boing.yVelocity;
+
+    if (boing.yVelocity > 0 && yBottom >= HEIGHT) {
+        y = HEIGHT - boing.height;
+        boing.isOnGround = true;
+    }
+
+    boing.y = y;
+}
+
+function drawBoing() {
+    setElementPosition(boing.element, boing);
+}
+
+function spawnObstacle() {
+    if (!game.isRunning) {
+        return;
+    }
+
+    const element = document.createElement("div");
+    element.classList.add("obstacle");
+
+    const obstacle = {
+        element,
+        x: WIDTH + OBSTACLE_SIZE.width,
+        y: HEIGHT - OBSTACLE_SIZE.height,
+        width: OBSTACLE_SIZE.width,
+        height: OBSTACLE_SIZE.height,
+        didScore: false,
+    };
+
+        setElementPosition(element, obstacle);
+
+    game.obstacles.push(obstacle);
+    OBSTACLES_EL.appendChild(element);
+}
+
+// boing elements
+
