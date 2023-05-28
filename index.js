@@ -369,5 +369,32 @@ function spawnObstacle() {
     OBSTACLES_EL.appendChild(element);
 }
 
-// boing elements
+function despawnObstacle(obstacleIndex) {
+    game.obstacles[obstacleIndex].element.remove();
+    game.obstacles.splice(obstacleIndex, 1);
+}
+
+function moveObstacles() {
+    for (let i = game.obstacles.length - 1; i >= 0; i--) {
+        const obstacle = game.obstacles[i];
+        obstacle.x -= game.speed;
+        if (obstacle.x < -obstacle.width) {
+            despawnObstacle(i);
+            continue;
+        }
+
+        setElementPosition(obstacle.element, obstacle);
+    }
+}
+
+function handleCollision() {
+    for (const obstacle of game.obstacles) {
+        if (doEntitiesCollide(boing, obstacle)) {
+            gameOver();
+            return;
+        }
+    }
+}
+
+// ^obstacle and collision
 
