@@ -396,5 +396,21 @@ function handleCollision() {
     }
 }
 
-// ^obstacle and collision
+function handleScore() {
+    for (const obstacle of game.obstacles) {
+        if (
+            !obstacle.didScore &&
+            obstacle.x + obstacle.width < boing.x
+        ) {
+            obstacle.didScore = true;
+            renderScore(++game.score);
+        }
+    }
+}
+
+function renderScore(score) {
+    SCORE_EL.innerText = score;
+}
+
+// render score
 
