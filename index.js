@@ -439,5 +439,15 @@ function doEntitiesCollide(entityA, entityB) {
     );
 }
 
-// entities colliding
+function setMessage(msg) {
+    MESSAGE_EL.innerText = msg;
+}
+
+function clearMessage() {
+    MESSAGE_EL.innerText = "";
+}
+
+main();
+
+// set and clear message
 
