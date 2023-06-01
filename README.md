@@ -1,8 +1,8 @@
-# 18/05/23 RR11_UnconfirmedTitle 
+# 18/05/23 RR11 Boing 
 
 # Boing Game Project
 
-This project is an alternate version of the Dinosaur game found on the Chrome "No Internet" screen. The game is built using HTML, JavaScript, and CSS.
+This project is inspired by the Dinosaur game found on the Chrome "No Internet" screen. It is built for educational purposes and to showcase the use of HTML, JavaScript, and CSS in creating a simple game.
 
 ## 📋 Prerequisites
 
@@ -19,13 +19,10 @@ Before starting the project, make sure you have the following:
 
 3. Open the `index.html` file in your web browser. You will see a blank webpage.
 
-## 📂 Project Structure
-
-The project consists of the following files:
-
-- `index.html`: Contains the HTML structure of the game.
-- `styles.css`: Contains the CSS styles for the game elements.
-- `script.js`: Contains the JavaScript code for game functionality.
+## 📂 Tech Stack
+- `HTML`
+- `CSS`
+- `JavaScript`
 
 ## 👨‍💻 Development Steps
 
@@ -57,11 +54,6 @@ The project consists of the following files:
 
 8. **Deployment**:
    - Once you are satisfied with the game, you can deploy it by hosting the files on a web server or using a platform like GitHub Pages.
-
-## 🙏 Acknowledgements
-
-This project is inspired by the Dinosaur game found on the Chrome "No Internet" screen. It is built for educational purposes and to showcase the use of HTML, JavaScript, and CSS in creating a simple game.
-
 ## 📄 License
 
 This project is licensed under the [MIT License](LICENSE).
