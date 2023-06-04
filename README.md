@@ -1,6 +1,4 @@
-# 18/05/23 RR11 Boing 
-
-## [Boing Game Project](https://i.pinimg.com/originals/fb/63/bd/fb63bda15134fde6da4e5fb9ef15b842.gif)
+# 18/05/23 RR11 [Boing] (https://i.pinimg.com/originals/fb/63/bd/fb63bda15134fde6da4e5fb9ef15b842.gif)
 
 Welcome to the Boing Game! This is a simple and addictive game where you control a character named "boing" and try to survive for as long as possible by avoiding obstacles. Challenge yourself, beat your highscore, and have fun!
 
@@ -9,9 +7,9 @@ It is built for educational purposes and to showcase the use of HTML, JavaScript
 
 Instructions for playing the game:
 
-🕹️ When you open the game, you will see a message on the screen. Press the ⌨️ `SPACE` key to start the game.
+When you open the game, you will see a message on the screen. Press the ⌨️ `SPACE` key to start the game.
 
-🚀 Once the game starts, you will control a character called "boing" using the following controls:
+Once the game starts, you will control a character called "boing" using the following controls:
    - Jump: Press the ⌨️ ``SPACE`` key, ⌨️ W key, or the ⬆️ Up Arrow key to make the character jump. Hold the `SPACE` key for a higher jump!
    - Pause: Press the ⌨️ `P` key or the ⌨️ `Escape` key to pause the game.
    - Reset: Press the ⌨️ `R` key to reset the game.
@@ -25,11 +23,11 @@ Instructions for playing the game:
 
 ## Additional features:
 
-🌌 Gravity Effect: The game has a gravity effect, causing the character to fall down unless a jump is initiated.
-⏩ Increasing Speed: The game speed increases as you progress, making it more challenging.
-🚧 Random Obstacle Spawning: Obstacles will spawn at random intervals, and you need to dodge them.
-📊 Score Counter: The game interface includes a score counter, which displays your current score.
-📜 Message Area: A message area is available to show instructions, game over messages, and highscore messages.
+- 🌌 Gravity Effect: The game has a gravity effect, causing the character to fall down unless a jump is initiated.
+- ⏩ Increasing Speed: The game speed increases as you progress, making it more challenging.
+- 🚧 Random Obstacle Spawning: Obstacles will spawn at random intervals, and you need to dodge them.
+- 📊 Score Counter: The game interface includes a score counter, which displays your current score.
+- 📜 Message Area: A message area is available to show instructions, game over messages, and highscore messages.
 
 Enjoy playing the game! 🎮
 
