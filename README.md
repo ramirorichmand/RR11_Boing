@@ -1,4 +1,4 @@
-# 18/05/23 RR11 [Boing] (https://i.pinimg.com/originals/fb/63/bd/fb63bda15134fde6da4e5fb9ef15b842.gif)
+# 18/05/23 RR11 [Boing](https://i.pinimg.com/originals/fb/63/bd/fb63bda15134fde6da4e5fb9ef15b842.gif)
 
 Welcome to the Boing Game! This is a simple and addictive game where you control a character named "boing" and try to survive for as long as possible by avoiding obstacles. Challenge yourself, beat your highscore, and have fun!
 
