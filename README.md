@@ -55,7 +55,7 @@ This project is licensed under the [MIT License](LICENSE).
 
 ## Show Your Support 🤝
 
-<b> Thank you </b> for taking the time to drop by and check out this revised study plan ☺️
+<b> Thank you </b> for taking the time to drop by and check out this mini game ☺️
 
 If you've liked or found this helpful, please consider giving it a star 🌟 and supporting me on my journey to improve my programming skills and chase my aspirations. I'd love to hear your feedback on this project, so feel free to leave your thoughts and suggestions 📬
 
